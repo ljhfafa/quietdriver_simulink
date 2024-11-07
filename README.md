@@ -1,5 +1,18 @@
-Our controller is an improvement of the fixed time-gap model. Our controller not only considers the relative speed between the two vehicles but also takes into account the relative speed and acceleration. As a result, the ego car's speed is smoother than in the basic model, and when the lead car has a significant acceleration, the ego car also accelerates more strongly.
+# QuietDriver Project
 
-When using our controller in simulations, we should observe that the ego car's speed remains relatively smooth. When the lead car starts moving, the ego car will quickly increase its acceleration. However, if the lead car is only fluctuating around a certain speed, the ego car's speed change is not drastic.
+## Overview
+The **QuietDriver Controller** is an enhancement of the traditional fixed time-gap model, aiming to provide smoother and more responsive vehicle-following dynamics in simulations. Unlike basic models, our controller considers not only the relative speed between the lead and ego vehicles but also their relative acceleration. This results in smoother speed adjustments for the ego car and stronger acceleration responses during significant changes in the lead car’s speed.
 
-This model performs well when there is a large speed difference between the two cars or when the lead car has high acceleration. However, at low speeds, the two cars may be too close, as this is a model based on a fixed time gap. We plan to address this issue in the next version.
+## Key Features
+- **Smooth Speed Transitions**: The ego car maintains a stable speed profile, even with fluctuations in the lead car's velocity.
+- **Responsive Acceleration**: During rapid lead car accelerations, the ego car quickly adjusts to maintain safe following distances.
+- **Enhanced Safety**: In scenarios with large speed differences, the controller reduces abrupt changes in the ego car's speed, creating a safer and more comfortable driving experience.
+
+## Behavior Overview
+In simulations with the QuietDriver Controller:
+- **Stable Following**: When the lead car's speed fluctuates around a stable value, the ego car’s speed remains smooth and steady, avoiding drastic changes.
+- **Quick Response to Acceleration**: The ego car's acceleration increases rapidly when the lead car starts moving from a stationary state.
+- **Limitations at Low Speeds**: At lower speeds, the vehicles may maintain a close distance due to the fixed time-gap model approach. We are currently working on an improved version to address this limitation.
+
+## Future Improvements
+Our next version aims to refine the model to maintain safe distances, especially at lower speeds, by adjusting the fixed time-gap mechanism based on speed and distance thresholds.
